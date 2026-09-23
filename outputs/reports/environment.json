@@ -1,0 +1,14 @@
+{
+  "run_utc": "2026-09-23T22:22:32.926483+00:00",
+  "seed": 42,
+  "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_executable": "C:\\Scripts\\industrial-defect-intelligence\\venv\\Scripts\\python.exe",
+  "working_directory": "C:\\Scripts\\industrial-defect-intelligence",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "Pillow": "12.3.0"
+  }
+}

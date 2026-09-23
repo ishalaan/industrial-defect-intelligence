@@ -1,0 +1,3 @@
+path,class_name,label_evidence,extension,sha256,pixel_sha256,hash_error,error,readable,width,height,mode,image_format,frames,greyscale,brightness,contrast,sharpness
+train/train/images/patches_101.jpg,patches,folders=[]; filename=patches,.jpg,4d2de82731b86cdbc7a66f2a9bfb01074bb4cb65e47bccf06b66470d53857071,0c8e6c64f970b25708f1ebf00872dea6153b9155ba7b505b2a65819eaa1a6192,,,True,200,200,RGB,JPEG,1,True,116.337625,59.19476948480647,1458.2182133126908
+train/train/images/patches_105.jpg,patches,folders=[]; filename=patches,.jpg,4d2de82731b86cdbc7a66f2a9bfb01074bb4cb65e47bccf06b66470d53857071,0c8e6c64f970b25708f1ebf00872dea6153b9155ba7b505b2a65819eaa1a6192,,,True,200,200,RGB,JPEG,1,True,116.337625,59.19476948480647,1458.2182133126908

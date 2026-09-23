@@ -1,0 +1,21 @@
+# Git shortcuts
+git-pull.bat
+git-push.bat
+python-activate.bat
+python-freeze.bat
+python-install.bat
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Other
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/

@@ -1,0 +1,17 @@
+check,status,detail
+Dataset folder,PASS,C:\Scripts\industrial-defect-intelligence\data\NEU-CLS
+Image count,PASS,1800 found; expected 1800
+Six recognised classes,PASS,"['crazing', 'inclusion', 'patches', 'pitted_surface', 'rolled_in_scale', 'scratches']"
+Per-class counts,PASS,"{'crazing': 300, 'inclusion': 300, 'patches': 300, 'pitted_surface': 300, 'rolled_in_scale': 300, 'scratches': 300}"
+Unambiguous labels,PASS,Unknown/conflicting labels: 0
+All images readable,PASS,0 unreadable/corrupt files
+SHA-256 coverage,PASS,1800 of 1800 file hashes obtained
+200 × 200 dimensions,PASS,"{(200, 200): 1800}"
+Greyscale pixel content,PASS,1800 of 1800 confirmed greyscale
+Native 8-bit greyscale mode,WARN,{'RGB': 1800}
+Single-frame images,PASS,Multi-frame images require an explicit handling decision
+No byte-identical duplicates,FAIL,1 duplicate groups
+No identical decoded pixels,FAIL,1 groups; 0 span labels
+No flat images,PASS,0 zero-contrast images
+No extra files,WARN,"1802 non-image files; inspect non_image_files.csv, especially annotations"
+Provenance and licence verified,WARN,Local source record and correspondence to the cited release require verification

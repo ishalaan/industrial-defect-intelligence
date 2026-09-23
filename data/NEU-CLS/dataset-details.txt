@@ -1,0 +1,218 @@
+NEU-CLS DATASET INFORMATION
+===========================
+
+Dataset name:
+NEU-CLS
+
+Application:
+Computer Vision - multiclass image classification of hot-rolled steel surface defects.
+
+Purpose in this project:
+The dataset will be used to compare a classical machine learning approach
+(HOG features + Support Vector Machine) against a deep learning approach
+(Convolutional Neural Network) using the same images and evaluation protocol.
+
+Public dataset source:
+Figshare
+
+Dataset page:
+https://figshare.com/articles/dataset/NEU-CLS/28903550
+
+Persistent DOI:
+https://doi.org/10.6084/m9.figshare.28903550
+
+Figshare record details:
+- Dataset title: NEU-CLS
+- Posted: 30 April 2025
+- Figshare author: Weilin Cao
+- Download size: approximately 26.05 MB
+- Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Original dataset provenance:
+Surface Inspection Laboratory, Northeastern University.
+
+Official Northeastern University dataset page:
+https://faculty.neu.edu.cn/songkc/en/zdylm/263265/list/
+
+Original dataset authors identified by Northeastern University:
+- Kechen Song
+- Yunhui Yan
+
+Dataset description:
+NEU-CLS is designed for classification of surface defects on hot-rolled steel strip.
+The official Northeastern University description lists six typical surface-defect
+categories:
+
+1. Crazing
+2. Inclusion
+3. Patches
+4. Pitted surface
+5. Rolled-in scale
+6. Scratches
+
+Dataset size and format:
+- Total published images: 1,800
+- Number of classes: 6
+- Published images per class: 300
+- Image resolution: 200 x 200 pixels
+- Image content: greyscale
+- Task: six-class defect classification
+
+Important task scope:
+NEU-CLS contains images belonging to six known defect categories.
+
+It does NOT contain a normal or defect-free steel class.
+
+Therefore, this project must NOT claim to determine whether an arbitrary steel
+surface is normal or defective. The modelling task is:
+
+"Given an image belonging to the represented defect dataset, classify it into
+one of the six known defect categories."
+
+The official Northeastern University source distinguishes:
+- NEU-CLS: image-only dataset for defect classification
+- NEU-DET: images with annotations for defect detection
+
+This project uses NEU-CLS for classification and does not require object
+detection or bounding-box prediction.
+
+
+DATASET CHARACTERISTICS RELEVANT TO THE PROJECT
+================================================
+
+The original Northeastern University description notes that:
+
+- defects within the same class can differ substantially in appearance;
+- defects from different classes can have similar appearances;
+- illumination and material changes can alter image greyscale characteristics.
+
+These characteristics make the dataset suitable for comparing handcrafted
+classical visual features with learned deep representations and for later
+robustness and subgroup analysis.
+
+
+LOCAL DATASET LOCATION
+======================
+
+Development location:
+
+C:\Scripts\industrial-defect-intelligence\data\NEU-CLS
+
+The final notebook should use relative paths rather than depend on this
+absolute Windows path.
+
+
+PRE-MODELLING DATA AUDIT
+========================
+
+The local dataset was audited before model development.
+
+Confirmed:
+- 1,800 image files discovered
+- 6 expected defect classes
+- 300 images found for each class
+- images readable
+- expected 200 x 200 dimensions
+- image pixel content is greyscale
+
+Important issue identified:
+One exact duplicate image pair was found within the Patches class:
+
+- patches_101.jpg
+- patches_105.jpg
+
+The files were confirmed as exact duplicates.
+
+Risk:
+If duplicate copies were allowed to fall into different development and test
+partitions, the test result could be artificially inflated through data leakage.
+
+Planned treatment:
+- Preserve the raw dataset unchanged.
+- Exclude one redundant duplicate from the modelling manifest before creating
+  the train/test partitions.
+- Keep the decision explicit and reproducible rather than manually deleting
+  the original file.
+- The resulting modelling pool will therefore contain 1,799 unique images.
+
+This duplicate finding should be reported in the final presentation as part of
+the critical discussion of dataset integrity and leakage prevention.
+
+
+OTHER AUDIT OBSERVATIONS
+========================
+
+The downloaded dataset contains annotation/non-image files in addition to the
+classification images.
+
+These are not required for the present task because this project performs
+image-level classification rather than object detection.
+
+Although the stored image files may be represented internally using RGB
+channels, audit inspection showed greyscale image content. Preprocessing will
+therefore convert images explicitly to a single greyscale channel so that this
+decision is controlled and reproducible.
+
+
+LICENCE AND RESPONSIBLE USE
+===========================
+
+The Figshare record lists the dataset under:
+
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The dataset source and original provenance should be attributed in the final
+notebook, presentation and transcript.
+
+The licence information applies to the Figshare record used for this project.
+The original Northeastern University page should also be cited for the
+dataset's original technical description and provenance.
+
+
+KEY LIMITATION TO RETAIN
+========================
+
+Performance on NEU-CLS should not be interpreted as evidence that a model will
+generalise automatically to:
+
+- defect-free steel;
+- other defect categories;
+- other steel grades;
+- different factories;
+- different cameras or inspection systems;
+- substantially different illumination or production conditions.
+
+The project therefore evaluates comparative performance on this benchmark,
+not universal industrial defect-detection capability.
+
+
+REFERENCES / SOURCE RECORDS
+===========================
+
+Figshare NEU-CLS record:
+https://figshare.com/articles/dataset/NEU-CLS/28903550
+
+Figshare DOI:
+https://doi.org/10.6084/m9.figshare.28903550
+
+Official Northeastern University NEU surface defect database:
+https://faculty.neu.edu.cn/songkc/en/zdylm/263265/list/
+
+Original work requested for citation by the Northeastern University source:
+
+Song, K. and Yan, Y. (2013)
+"A noise robust method based on completed local binary patterns for hot-rolled
+steel strip surface defects."
+Applied Surface Science, 285, pp. 858-864.
+
+
+PROJECT NOTES
+=============
+
+Do not delete or alter the raw dataset as part of preprocessing.
+
+All exclusions, labels, splits and later subgroup definitions should be
+recorded programmatically so the experiment remains reproducible.
+
+Continue adding important dataset-related findings to this file as the project
+develops.
