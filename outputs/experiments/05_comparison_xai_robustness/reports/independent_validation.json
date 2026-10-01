@@ -1,0 +1,218 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Executed analysis code unchanged after test release",
+      "pass": true
+    },
+    {
+      "check": "All code cells executed without errors",
+      "pass": true
+    },
+    {
+      "check": "No em dashes in notebook source",
+      "pass": true
+    },
+    {
+      "check": "Exact installation command",
+      "pass": true
+    },
+    {
+      "check": "Exactly the locked test rows in cache",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM independent clean metric calculation",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM confusion counts",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM per-class metrics",
+      "pass": true
+    },
+    {
+      "check": "CNN independent clean metric calculation",
+      "pass": true
+    },
+    {
+      "check": "CNN confusion counts",
+      "pass": true
+    },
+    {
+      "check": "CNN per-class metrics",
+      "pass": true
+    },
+    {
+      "check": "blur_radius_0.5 HOG-SVM saved metric",
+      "pass": true
+    },
+    {
+      "check": "blur_radius_0.5 HOG-SVM deltas",
+      "pass": true
+    },
+    {
+      "check": "blur_radius_0.5 CNN saved metric",
+      "pass": true
+    },
+    {
+      "check": "blur_radius_0.5 CNN deltas",
+      "pass": true
+    },
+    {
+      "check": "brightness_minus_10 HOG-SVM saved metric",
+      "pass": true
+    },
+    {
+      "check": "brightness_minus_10 HOG-SVM deltas",
+      "pass": true
+    },
+    {
+      "check": "brightness_minus_10 CNN saved metric",
+      "pass": true
+    },
+    {
+      "check": "brightness_minus_10 CNN deltas",
+      "pass": true
+    },
+    {
+      "check": "brightness_plus_10 HOG-SVM saved metric",
+      "pass": true
+    },
+    {
+      "check": "brightness_plus_10 HOG-SVM deltas",
+      "pass": true
+    },
+    {
+      "check": "brightness_plus_10 CNN saved metric",
+      "pass": true
+    },
+    {
+      "check": "brightness_plus_10 CNN deltas",
+      "pass": true
+    },
+    {
+      "check": "contrast_0.8 HOG-SVM saved metric",
+      "pass": true
+    },
+    {
+      "check": "contrast_0.8 HOG-SVM deltas",
+      "pass": true
+    },
+    {
+      "check": "contrast_0.8 CNN saved metric",
+      "pass": true
+    },
+    {
+      "check": "contrast_0.8 CNN deltas",
+      "pass": true
+    },
+    {
+      "check": "noise_sigma_5 HOG-SVM saved metric",
+      "pass": true
+    },
+    {
+      "check": "noise_sigma_5 HOG-SVM deltas",
+      "pass": true
+    },
+    {
+      "check": "noise_sigma_5 CNN saved metric",
+      "pass": true
+    },
+    {
+      "check": "noise_sigma_5 CNN deltas",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM brightness low subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN brightness low subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM brightness middle subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN brightness middle subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM brightness high subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN brightness high subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM contrast low subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN contrast low subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM contrast middle subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN contrast middle subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM contrast high subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN contrast high subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM sharpness low subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN sharpness low subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM sharpness middle subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN sharpness middle subgroup",
+      "pass": true
+    },
+    {
+      "check": "HOG-SVM sharpness high subgroup",
+      "pass": true
+    },
+    {
+      "check": "CNN sharpness high subgroup",
+      "pass": true
+    },
+    {
+      "check": "Original sources remain unchanged",
+      "pass": true
+    },
+    {
+      "check": "Single clean evaluation integrity",
+      "pass": true
+    },
+    {
+      "check": "Acceptance checks passed",
+      "pass": true
+    },
+    {
+      "check": "HTML exported",
+      "pass": true
+    }
+  ],
+  "scope": "Recalculated from saved predictions; no model inference or fitting"
+}

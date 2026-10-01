@@ -1,0 +1,14 @@
+model,true_class,predicted_class,count
+CNN,pitted_surface,inclusion,10
+HOG-SVM,scratches,inclusion,9
+HOG-SVM,patches,crazing,5
+HOG-SVM,patches,scratches,5
+HOG-SVM,pitted_surface,inclusion,5
+HOG-SVM,inclusion,pitted_surface,4
+HOG-SVM,pitted_surface,patches,4
+CNN,crazing,patches,2
+CNN,scratches,inclusion,2
+HOG-SVM,patches,pitted_surface,2
+CNN,patches,crazing,1
+CNN,pitted_surface,scratches,1
+HOG-SVM,crazing,patches,1

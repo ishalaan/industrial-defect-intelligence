@@ -1,0 +1,5 @@
+{
+  "status": "ABORTED",
+  "reason": "Preliminary run stopped during SVM development to incorporate acquisition-path corrections before the full final execution.",
+  "superseded_by": "fresh_20260927T194627_610401Z"
+}

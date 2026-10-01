@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "changes": "Added result-specific and visually inspected commentary only; moved reproducibility notes before final conclusion",
+  "code_cells_unchanged": true,
+  "models_rerun": false,
+  "figures_visually_reviewed": [
+    "clean_confusion_matrices.png",
+    "gradcam_and_hog_cases.png",
+    "robustness_deltas.png",
+    "diagnostic_subgroups.png",
+    "stress_examples.png"
+  ],
+  "initial_preflight_failure": "SVM deprecated probability sentinel; corrected before any test decoding; failed attempt retained in reproducibility"
+}

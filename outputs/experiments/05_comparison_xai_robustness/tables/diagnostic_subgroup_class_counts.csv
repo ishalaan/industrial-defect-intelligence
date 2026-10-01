@@ -1,0 +1,10 @@
+property,bin,n,crazing,inclusion,patches,pitted_surface,rolled_in_scale,scratches
+brightness,low,121,10,33,14,11,14,39
+brightness,middle,118,25,17,11,9,39,17
+brightness,high,121,25,10,35,40,7,4
+contrast,low,120,0,51,0,11,36,22
+contrast,middle,120,29,7,4,29,24,27
+contrast,high,120,31,2,56,20,0,11
+sharpness,low,121,0,60,0,20,0,41
+sharpness,middle,118,0,0,11,40,48,19
+sharpness,high,121,60,0,49,0,12,0

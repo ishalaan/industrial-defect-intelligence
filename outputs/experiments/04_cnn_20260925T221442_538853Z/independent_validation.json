@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "completed_code_cells": 13,
+  "all_five_fold_best_epochs_independently_verified": true,
+  "early_stopping_patience_verified": true,
+  "median_refit_rule_verified": true,
+  "oof_coverage": 1439,
+  "acceptance_checks": 1505,
+  "no_notebook_errors": true,
+  "no_em_dashes_in_notebook_source": true
+}

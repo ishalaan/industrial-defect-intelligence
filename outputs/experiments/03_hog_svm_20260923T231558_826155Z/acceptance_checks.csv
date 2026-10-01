@@ -1,0 +1,10 @@
+check,status
+Split and folds passed and checksum matched,PASS
+Development-only image access,PASS
+One OOF prediction per development image per candidate,PASS
+Six candidates over five folds,PASS
+Fold-local scaler statistics verified,PASS
+Final model refit on development only,PASS
+Serialized model prediction equivalence,PASS
+Preparation artifacts unchanged,PASS
+Development raw bytes unchanged,PASS

@@ -1,0 +1,76 @@
+{
+  "run_id": "20260925T222444_288464Z",
+  "config": {
+    "seed": 42,
+    "channels": [
+      8,
+      16,
+      32
+    ],
+    "input_shape": [
+      1,
+      200,
+      200
+    ],
+    "first_conv_stride": 2,
+    "dropout": 0.25,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 25,
+    "patience": 5,
+    "threads": 4,
+    "num_workers": 0,
+    "augmentation": "none",
+    "selection": "strictly highest validation macro F1; earliest tie",
+    "refit_epoch_rule": "ceiling of median best fold epoch"
+  },
+  "classes": [
+    "crazing",
+    "inclusion",
+    "patches",
+    "pitted_surface",
+    "rolled_in_scale",
+    "scratches"
+  ],
+  "class_to_index": {
+    "crazing": 0,
+    "inclusion": 1,
+    "patches": 2,
+    "pitted_surface": 3,
+    "rolled_in_scale": 4,
+    "scratches": 5
+  },
+  "source_hashes": {
+    "manifest": "33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86",
+    "split_lock": "f678b758c8b2cb11ccfc2d1689056965dbc0973e294c43e79d09ca43932e9eea",
+    "folds": "c8210ccc956219350e9f27ebfef6ed16d5ee0cc9e1743522d390fe3c7f5dce8c",
+    "fold_lock": "d0f1e51e302487a4b108546e51f6dba741cb6610de28e1336083466f2d3c13bf",
+    "split_status": "159add9b2ce264e5979d6794c0310a8e1e51c407768063e13031fe8e36af8774",
+    "fold_status": "bcf460af82d526bd570ebec5b89d87ab0a27fdf399726006af5af2ddad2e7f80",
+    "classical_pointer": "c7c1d9994802e9152e4d4b99fe6fcfde2aee0d41e5a4c63519058e75324b5ed2",
+    "classical_result": "00f7eede883641950f6b3849ff5d7515d450e1292e2e84cebc7a2f3fdf813af0"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "executable": "C:\\Scripts\\industrial-defect-intelligence\\venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "logical_cpus": 12,
+    "torch_threads": 4,
+    "device": "cpu",
+    "cuda_available": false,
+    "deterministic_algorithms": true,
+    "packages": {
+      "torch": "2.14.0",
+      "torchvision": "0.29.0",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "matplotlib": "3.11.2",
+      "pillow": "12.3.0",
+      "scikit-learn": "1.9.1",
+      "captum": "0.9.0"
+    }
+  },
+  "interpretation": "development checkpoint selection, not final test or nested validation"
+}

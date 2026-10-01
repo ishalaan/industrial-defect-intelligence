@@ -1,0 +1,82 @@
+{
+  "run_id": "20260923T231931_862231Z",
+  "seed": 42,
+  "source_digests": {
+    "manifest": "33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86",
+    "split_lock": "f678b758c8b2cb11ccfc2d1689056965dbc0973e294c43e79d09ca43932e9eea",
+    "folds": "c8210ccc956219350e9f27ebfef6ed16d5ee0cc9e1743522d390fe3c7f5dce8c",
+    "fold_lock": "d0f1e51e302487a4b108546e51f6dba741cb6610de28e1336083466f2d3c13bf",
+    "split_status": "159add9b2ce264e5979d6794c0310a8e1e51c407768063e13031fe8e36af8774",
+    "fold_status": "bcf460af82d526bd570ebec5b89d87ab0a27fdf399726006af5af2ddad2e7f80"
+  },
+  "input_size": [
+    200,
+    200
+  ],
+  "grayscale": "Pillow L / 255, float32",
+  "hog": {
+    "orientations": 9,
+    "pixels_per_cell": [
+      16,
+      16
+    ],
+    "cells_per_block": [
+      2,
+      2
+    ],
+    "block_norm": "L2-Hys",
+    "transform_sqrt": false,
+    "feature_vector": true,
+    "channel_axis": null
+  },
+  "candidates": [
+    {
+      "kernel": "linear",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 10.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": "scale"
+    }
+  ],
+  "selection_metric": "mean five-fold macro F1",
+  "tie_break": "declared candidate order",
+  "environment": {
+    "python": "3.14.0",
+    "executable": "C:\\Scripts\\industrial-defect-intelligence\\venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "matplotlib": "3.11.2",
+      "pillow": "12.3.0",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0"
+    }
+  },
+  "scope": "development only; test evaluation deferred"
+}

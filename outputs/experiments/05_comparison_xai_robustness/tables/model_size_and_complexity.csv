@@ -1,0 +1,3 @@
+model,file_bytes,cnn_parameter_count,hog_dimensions,support_vectors
+HOG-SVM,24503366,,4356.0,1246.0
+CNN,32865,6142.0,,

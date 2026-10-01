@@ -1,0 +1,13 @@
+{
+  "matches": true,
+  "environment_matches": true,
+  "matched_epochs": 108,
+  "original_epochs": 108,
+  "maximum_absolute_errors": {
+    "online_train_loss": 1.1102230246251565e-16,
+    "train_loss": 1.1102230246251565e-16,
+    "train_macro_f1": 1.1102230246251565e-16,
+    "validation_loss": 1.1102230246251565e-16,
+    "validation_macro_f1": 1.1102230246251565e-16
+  }
+}

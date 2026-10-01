@@ -1,0 +1,10 @@
+path,true_class,target_class,cam_min,cam_max,constant_map
+data/NEU-CLS/train/train/images/crazing_100.jpg,crazing,crazing,0.0010491851717233658,0.016687190160155296,False
+data/NEU-CLS/train/train/images/inclusion_102.jpg,inclusion,inclusion,0.0,0.0036461229901760817,False
+data/NEU-CLS/train/train/images/patches_10.jpg,patches,patches,0.004106825217604637,0.025106430053710938,False
+data/NEU-CLS/train/train/images/pitted_surface_10.jpg,pitted_surface,inclusion,0.0,0.004987751599401236,False
+data/NEU-CLS/train/train/images/rolled-in_scale_100.jpg,rolled-in_scale,rolled-in_scale,0.0,0.011819879524409771,False
+data/NEU-CLS/train/train/images/scratches_101.jpg,scratches,scratches,0.0027959446888417006,0.014720089733600616,False
+data/NEU-CLS/train/train/images/crazing_19.jpg,crazing,patches,0.004890161100775003,0.01839001290500164,False
+data/NEU-CLS/train/train/images/crazing_294.jpg,crazing,crazing,0.0,0.016139138489961624,False
+data/NEU-CLS/train/train/images/crazing_77.jpg,crazing,patches,0.004920380190014839,0.01845651865005493,False

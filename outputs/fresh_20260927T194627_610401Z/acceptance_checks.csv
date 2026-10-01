@@ -1,0 +1,16 @@
+check,passed
+raw_count_and_unique_count,True
+split_sizes,True
+content_disjoint,True
+five_shared_folds,True
+all_svm_candidates_complete,True
+both_cnn_caps_complete,True
+pre_freeze_development_only,True
+deliberate_test_request_denied,True
+same_test_order,True
+test_predictions_finite,True
+metrics_finite,True
+models_unchanged,True
+freeze_unchanged,True
+protocol_unchanged,True
+split_and_folds_unchanged,True

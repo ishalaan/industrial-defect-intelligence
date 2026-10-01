@@ -1,0 +1,7 @@
+class_name,mode,width,height,greyscale,size
+crazing,RGB,200,200,True,300
+inclusion,RGB,200,200,True,300
+patches,RGB,200,200,True,300
+pitted_surface,RGB,200,200,True,300
+rolled-in_scale,RGB,200,200,True,300
+scratches,RGB,200,200,True,300

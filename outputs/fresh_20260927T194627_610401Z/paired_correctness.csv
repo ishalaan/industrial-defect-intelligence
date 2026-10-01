@@ -1,0 +1,6 @@
+svm_correct,cnn_correct,disagree,size
+False,False,False,5
+False,False,True,1
+False,True,True,29
+True,False,True,10
+True,True,False,315

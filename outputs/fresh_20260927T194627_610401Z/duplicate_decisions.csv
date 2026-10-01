@@ -1,0 +1,3 @@
+path,class_name,sha256,pixel_sha256,included,retained_path
+data/NEU-CLS/train/train/images/patches_101.jpg,patches,4d2de82731b86cdbc7a66f2a9bfb01074bb4cb65e47bccf06b66470d53857071,2674e119fd69aaa9f2a662e3965defd66351521f3f7cb512950bec4de5b828f6,True,data/NEU-CLS/train/train/images/patches_101.jpg
+data/NEU-CLS/train/train/images/patches_105.jpg,patches,4d2de82731b86cdbc7a66f2a9bfb01074bb4cb65e47bccf06b66470d53857071,2674e119fd69aaa9f2a662e3965defd66351521f3f7cb512950bec4de5b828f6,False,data/NEU-CLS/train/train/images/patches_101.jpg

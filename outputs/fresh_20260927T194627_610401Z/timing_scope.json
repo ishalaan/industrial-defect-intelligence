@@ -1,0 +1,8 @@
+{
+  "shared_development_decode_and_integrity_seconds": 10.417085399967618,
+  "test_decode_and_integrity_seconds": 2.8476080999244004,
+  "cnn25_wall_seconds": 682.0576903999317,
+  "cnn40_wall_seconds": 778.2454909998924,
+  "cnn_optimisation_seconds": 942.4333028011024,
+  "cnn_preprocessing": "normalisation occurs in loaders and is included in training/diagnostic timings; single-image cost separately measured"
+}

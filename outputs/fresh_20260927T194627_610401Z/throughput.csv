@@ -1,0 +1,3 @@
+model,n,batch_route,median_seconds,images_per_second
+HOG-SVM,128,cached uint8 arrays through preprocessing and prediction,2.9694839000003412,43.1051335216821
+CNN,128,cached uint8 arrays through preprocessing and prediction,0.21318079996854067,600.4293070430784

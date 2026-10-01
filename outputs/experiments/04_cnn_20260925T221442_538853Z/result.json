@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "run_id": "20260925T221442_538853Z",
+  "source_hashes": {
+    "manifest": "33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86",
+    "split_lock": "f678b758c8b2cb11ccfc2d1689056965dbc0973e294c43e79d09ca43932e9eea",
+    "folds": "c8210ccc956219350e9f27ebfef6ed16d5ee0cc9e1743522d390fe3c7f5dce8c",
+    "fold_lock": "d0f1e51e302487a4b108546e51f6dba741cb6610de28e1336083466f2d3c13bf",
+    "split_status": "159add9b2ce264e5979d6794c0310a8e1e51c407768063e13031fe8e36af8774",
+    "fold_status": "bcf460af82d526bd570ebec5b89d87ab0a27fdf399726006af5af2ddad2e7f80",
+    "classical_pointer": "c7c1d9994802e9152e4d4b99fe6fcfde2aee0d41e5a4c63519058e75324b5ed2",
+    "classical_result": "00f7eede883641950f6b3849ff5d7515d450e1292e2e84cebc7a2f3fdf813af0"
+  },
+  "device": "cpu",
+  "cv_mean": {
+    "accuracy": 0.9374637049941927,
+    "precision_macro": 0.9412946457902491,
+    "recall_macro": 0.9375,
+    "f1_macro": 0.9377474935766218
+  },
+  "cv_std": {
+    "accuracy": 0.02882616828973997,
+    "precision_macro": 0.026106832619732182,
+    "recall_macro": 0.028842443968465588,
+    "f1_macro": 0.028422479705593598
+  },
+  "pooled_oof_metrics": {
+    "accuracy": 0.9374565670604587,
+    "precision_macro": 0.939719273465259,
+    "recall_macro": 0.9374651324965133,
+    "f1_macro": 0.9377226216396312
+  },
+  "trainable_parameters": 6142,
+  "best_fold_epochs": [
+    20,
+    15,
+    8,
+    23,
+    23
+  ],
+  "epochs_run": [
+    25,
+    20,
+    13,
+    25,
+    25
+  ],
+  "total_cv_wall_seconds": 394.2373287001392,
+  "total_cv_optimisation_seconds": 253.00150900019798,
+  "image_load_and_integrity_seconds": 2.831440499983728,
+  "final_refit_epochs": 20,
+  "final_refit_seconds": 56.54799669992644,
+  "final_checkpoint_bytes": 32865,
+  "final_checkpoint_sha256": "0cc0e297c5754c18727a697502e557a2dd8faa783d2c3d6b4e38881fc8e0007b",
+  "final_normalisation": {
+    "mean": 0.5030581377999428,
+    "std": 0.21262516515900343
+  },
+  "inference": {
+    "device": "cpu",
+    "threads": 4,
+    "warmup_calls": 3,
+    "batch_size": 32,
+    "batch_repeats": 10,
+    "single_repeats": 20,
+    "batch_median_ms": 23.26644997810945,
+    "batch_amortised_ms_per_image": 0.7270765618159203,
+    "single_median_ms": 1.4022999675944448,
+    "single_p95_ms": 1.5691949578467757,
+    "scope": "warm forward pass only, development tensors; excludes image decoding and normalisation"
+  },
+  "test_images_opened": 0,
+  "test_evaluation_performed": false,
+  "development_images": 1439,
+  "completed_folds": 5,
+  "captum_preflight": "PASS: synthetic attribution shape 1x1x25x25, finite",
+  "interpretation": "Validation epochs selected on these folds; scores are development estimates, not final test results",
+  "classical_reference_run": "outputs/experiments/03_hog_svm_20260923T232217_532748Z",
+  "development_mean_f1_difference_vs_svm": 0.0506339920598005
+}

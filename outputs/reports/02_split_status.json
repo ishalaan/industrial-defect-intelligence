@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86",
+  "dataset_fingerprint": "59df7a934a3e2aa0c378f7a7e006439471de321c7d37d71e2cd8dfa3dfd744b7",
+  "critical_checks_passed": 29,
+  "warnings": [
+    "Local archive-to-Figshare provenance remains unverified",
+    "Full-collection EDA preceded the test split",
+    "Near-duplicate and acquisition-group independence not established"
+  ]
+}

@@ -1,0 +1,3 @@
+path,filename,class_name,label_source,extension,sha256,pixel_sha256,is_duplicate,duplicate_group,canonical_path,include_in_modelling,exclusion_reason,split
+data/NEU-CLS/train/train/images/patches_101.jpg,patches_101.jpg,patches,filename_prefix,.jpg,4d2de82731b86cdbc7a66f2a9bfb01074bb4cb65e47bccf06b66470d53857071,0c8e6c64f970b25708f1ebf00872dea6153b9155ba7b505b2a65819eaa1a6192,True,1,data/NEU-CLS/train/train/images/patches_101.jpg,True,,test
+data/NEU-CLS/train/train/images/patches_105.jpg,patches_105.jpg,patches,filename_prefix,.jpg,4d2de82731b86cdbc7a66f2a9bfb01074bb4cb65e47bccf06b66470d53857071,0c8e6c64f970b25708f1ebf00872dea6153b9155ba7b505b2a65819eaa1a6192,True,1,data/NEU-CLS/train/train/images/patches_101.jpg,False,redundant exact duplicate excluded,excluded

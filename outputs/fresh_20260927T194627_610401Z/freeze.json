@@ -1,0 +1,57 @@
+{
+  "time_utc": "2026-09-27T20:18:00.300038+00:00",
+  "svm": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale"
+  },
+  "cnn": {
+    "chosen_cap": 25,
+    "refit_epochs": 20,
+    "decision": "retain 25: adequate under this bounded check",
+    "prefix_matches": true,
+    "prefix_max_errors": {
+      "online_loss": 0.0,
+      "train_loss": 0.0,
+      "validation_loss": 0.0,
+      "train_f1": 0.0,
+      "validation_f1": 0.0,
+      "patience_used": 0.0
+    },
+    "material_folds": 0,
+    "natural_stops": 5,
+    "mean_delta": 0.0
+  },
+  "cnn_mean": 0.5030581377999428,
+  "cnn_std": 0.21262516515900343,
+  "svm_sha256": "cbedd4f8babcd2cb11b8ddc2a13685dff3b5b837019a98dab3dec847ab15a003",
+  "cnn_sha256": "3b3939567d73e6867b4a6183e6a80b1e5db76177794f2a548ca6f09416daac03",
+  "split_sha256": "36dd971dd2e60a1ad91fad76524551c81500eece82b7fc68b32c5b48577530f4",
+  "fold_sha256": "2fc05ad80840bf956bec63339a755b5a4afdb2fdffa970c084374cbda5791b84",
+  "protocol_sha256": "7846f4cb7c84b7d0197ae68c7248e5da251eb7e0845f390e68766d16fcb9fa7e",
+  "cutpoints": {
+    "brightness": [
+      0.4123964011669159,
+      0.5665927529335022
+    ],
+    "contrast": [
+      0.06837473064661026,
+      0.11273609598477681
+    ],
+    "sharpness": [
+      0.0017636339956273632,
+      0.013631198244790236
+    ]
+  },
+  "stress": {
+    "blur_sigma": 0.6,
+    "brightness_factors": [
+      0.9,
+      1.1
+    ],
+    "contrast_factor": 0.9,
+    "noise_sd": 0.02,
+    "seed": 2026
+  },
+  "pre_freeze_test_reads": 0
+}

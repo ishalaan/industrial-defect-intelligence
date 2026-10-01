@@ -1,0 +1,30 @@
+check,status,detail
+Dataset exists,PASS,C:\Scripts\industrial-defect-intelligence\data\NEU-CLS
+Unambiguous filename labels,PASS,All filenames recognised
+Raw image count,PASS,1800 images; expected 1800
+Unique paths,PASS,Every image appears once
+Expected six labels,PASS,"['crazing', 'inclusion', 'patches', 'pitted_surface', 'rolled_in_scale', 'scratches']"
+300 raw images per class,PASS,"{'crazing': 300, 'inclusion': 300, 'patches': 300, 'pitted_surface': 300, 'rolled_in_scale': 300, 'scratches': 300}"
+Readable 200x200 single-frame greyscale images,PASS,All 1800 images passed
+No conflicting labels for sha256,PASS,0 conflicts
+No conflicting labels for pixel_sha256,PASS,0 conflicts
+Audited exact duplicate group,PASS,"['patches_101.jpg', 'patches_105.jpg']"
+Unique modelling pool,PASS,1799 unique byte hashes
+No remaining pixel duplicates,PASS,Each retained image has distinct decoded pixels
+Exactly one exclusion,PASS,['patches_105.jpg']
+Lock policy and dataset match,PASS,"{'schema_version': 1, 'seed': 42, 'test_size': 0.2, 'classes': ['crazing', 'inclusion', 'patches', 'pitted_surface', 'rolled_in_scale', 'scratches'], 'dataset_fingerprint': '59df7a934a3e2aa0c378f7a7e006439471de321c7d37d71e2cd8dfa3dfd744b7', 'duplicate_policy': 'lexicographically first POSIX relative path per byte SHA-256'}"
+Locked manifest exists,PASS,C:\Scripts\industrial-defect-intelligence\outputs\metrics\data_split_manifest.csv
+Manifest checksum matches lock,PASS,Saved manifest must be unchanged
+Saved manifest paths match,PASS,Exact path coverage required
+Only allowed split values,PASS,"{'development': 1439, 'test': 360, 'excluded': 1}"
+Complete exclusive assignment,PASS,Every retained image assigned once
+Excluded images stay excluded,PASS,Exclusions exactly match duplicate policy
+80/20 partition sizes,PASS,Development=1439; test=360
+No cross-partition overlap: path,PASS,0 overlaps
+No cross-partition overlap: sha256,PASS,0 overlaps
+No cross-partition overlap: pixel_sha256,PASS,0 overlaps
+Stratification in every class,PASS,"{'development': {'crazing': 240, 'inclusion': 240, 'patches': 239, 'pitted_surface': 240, 'rolled_in_scale': 240, 'scratches': 240}, 'test': {'crazing': 60, 'inclusion': 60, 'patches': 60, 'pitted_surface': 60, 'rolled_in_scale': 60, 'scratches': 60}, 'excluded': {'crazing': 0, 'inclusion': 0, 'patches': 1, 'pitted_surface': 0, 'rolled_in_scale': 0, 'scratches': 0}}"
+Raw dataset unchanged,PASS,3603 source files checked byte-for-byte
+Reconstructed manifest matches saved lock,PASS,"Labels, hashes, exclusions and assignments all agree"
+Saved manifest verified,PASS,33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86
+Raw dataset still unchanged after publication,PASS,All 3603 source files preserved

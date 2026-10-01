@@ -1,0 +1,25 @@
+{
+  "cell_index": 24,
+  "display_execution_count": 2,
+  "original_full_run_counts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "scope": "Display-only cell re-execution after full sequential run; line wrapping and constrained layout; unchanged models, predictions and attribution registry.",
+  "utc": "2026-09-27T23:17:37.893930+00:00",
+  "per_class_table_repair": "Removed scalar accuracy from classwise reports to avoid broadcasting accuracy into the support column. Regenerated displays from cached predictions; primary inference was not repeated."
+}

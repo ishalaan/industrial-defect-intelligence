@@ -1,0 +1,87 @@
+{
+  "seed": 42,
+  "classes": [
+    "crazing",
+    "inclusion",
+    "patches",
+    "pitted_surface",
+    "rolled-in_scale",
+    "scratches"
+  ],
+  "hog": {
+    "orientations": 9,
+    "pixels_per_cell": [
+      16,
+      16
+    ],
+    "cells_per_block": [
+      2,
+      2
+    ],
+    "block_norm": "L2-Hys",
+    "transform_sqrt": false,
+    "feature_vector": true
+  },
+  "svm_candidates": [
+    {
+      "kernel": "linear",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "linear",
+      "C": 10.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale"
+    },
+    {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": "scale"
+    }
+  ],
+  "cnn": {
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "dropout": 0.25,
+    "patience": 5,
+    "caps": [
+      25,
+      40
+    ],
+    "threads": 4
+  },
+  "stress": {
+    "blur_sigma": 0.6,
+    "brightness_factors": [
+      0.9,
+      1.1
+    ],
+    "contrast_factor": 0.9,
+    "noise_sd": 0.02,
+    "seed": 2026
+  },
+  "epoch_rule": "ceiling of median best fold epoch",
+  "sensitivity_rule": {
+    "material": 0.005,
+    "mean_negligible": 0.002,
+    "min_material_folds": 2,
+    "min_natural_stops": 3,
+    "prefix_tolerance": 1e-10
+  }
+}

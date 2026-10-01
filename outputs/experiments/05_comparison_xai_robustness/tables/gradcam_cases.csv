@@ -1,0 +1,11 @@
+index,path,category,selection_reason,target_role,target_class,native_min,native_max,native_positive_fraction,native_shape
+0,data/NEU-CLS/train/train/images/crazing_100.jpg,both_correct,first path: both_correct; first CNN-correct path,predicted,crazing,0.000942354672588408,0.017161263152956963,1.0,25x25
+0,data/NEU-CLS/train/train/images/crazing_100.jpg,both_correct,first path: both_correct; first CNN-correct path,true,crazing,0.000942354672588408,0.017161263152956963,1.0,25x25
+22,data/NEU-CLS/train/train/images/crazing_19.jpg,svm_correct_cnn_wrong,first path: svm_correct_cnn_wrong,predicted,patches,0.004733511712402105,0.018592901527881622,1.0,25x25
+22,data/NEU-CLS/train/train/images/crazing_19.jpg,svm_correct_cnn_wrong,first path: svm_correct_cnn_wrong,true,crazing,0.0,0.013665251433849335,0.5632,25x25
+43,data/NEU-CLS/train/train/images/crazing_294.jpg,cnn_correct_svm_wrong,first path: cnn_correct_svm_wrong,predicted,crazing,0.0,0.016416460275650024,0.9296,25x25
+43,data/NEU-CLS/train/train/images/crazing_294.jpg,cnn_correct_svm_wrong,first path: cnn_correct_svm_wrong,true,crazing,0.0,0.016416460275650024,0.9296,25x25
+126,data/NEU-CLS/train/train/images/patches_14.jpg,both_wrong,first path: both_wrong,predicted,crazing,0.0,0.012087310664355755,0.9056,25x25
+126,data/NEU-CLS/train/train/images/patches_14.jpg,both_wrong,first path: both_wrong,true,patches,0.0036552108358591795,0.021490715444087982,1.0,25x25
+348,data/NEU-CLS/train/train/images/scratches_69.jpg,both_wrong,highest-softmax CNN error,predicted,inclusion,0.0,0.00413407851010561,0.904,25x25
+348,data/NEU-CLS/train/train/images/scratches_69.jpg,both_wrong,highest-softmax CNN error,true,scratches,0.0017972434870898724,0.007846392691135406,1.0,25x25

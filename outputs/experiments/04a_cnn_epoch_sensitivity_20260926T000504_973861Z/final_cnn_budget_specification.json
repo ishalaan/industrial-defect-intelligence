@@ -1,0 +1,32 @@
+{
+  "config": {
+    "seed": 42,
+    "channels": [
+      8,
+      16,
+      32
+    ],
+    "input_shape": [
+      1,
+      200,
+      200
+    ],
+    "first_conv_stride": 2,
+    "dropout": 0.25,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 25,
+    "patience": 5,
+    "threads": 4,
+    "num_workers": 0,
+    "augmentation": "none",
+    "selection": "strictly highest validation macro F1; earliest tie",
+    "refit_epoch_rule": "ceiling of median best fold epoch"
+  },
+  "decision": "retain 25; negligible improvement with natural validation plateaus",
+  "refit_epoch_rule": "ceiling of median best fold epoch",
+  "derived_refit_epochs": 20,
+  "refit_performed_in_this_notebook": false,
+  "reference_run_for_selected_epochs": "04_cnn_20260925T222923_890724Z"
+}

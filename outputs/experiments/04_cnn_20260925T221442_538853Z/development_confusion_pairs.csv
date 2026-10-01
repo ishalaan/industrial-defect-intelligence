@@ -1,0 +1,10 @@
+true_class,predicted_class,count
+scratches,inclusion,23
+pitted_surface,inclusion,20
+patches,crazing,12
+inclusion,pitted_surface,12
+crazing,patches,10
+pitted_surface,scratches,8
+scratches,pitted_surface,3
+inclusion,scratches,1
+scratches,patches,1

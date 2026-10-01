@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "run": "C:\\Scripts\\industrial-defect-intelligence\\outputs\\fresh_20260927T194627_610401Z",
+  "test_results": [
+    {
+      "model": "HOG-SVM",
+      "n": 360,
+      "accuracy": 0.9027777777777778,
+      "precision_macro": 0.9054977508630065,
+      "recall_macro": 0.9027777777777777,
+      "f1_macro": 0.9023023505851033
+    },
+    {
+      "model": "CNN",
+      "n": 360,
+      "accuracy": 0.9555555555555556,
+      "precision_macro": 0.961108023833781,
+      "recall_macro": 0.9555555555555556,
+      "f1_macro": 0.9554933202335448
+    }
+  ],
+  "sensitivity": {
+    "chosen_cap": 25,
+    "refit_epochs": 20,
+    "decision": "retain 25: adequate under this bounded check",
+    "prefix_matches": true,
+    "prefix_max_errors": {
+      "online_loss": 0.0,
+      "train_loss": 0.0,
+      "validation_loss": 0.0,
+      "train_f1": 0.0,
+      "validation_f1": 0.0,
+      "patience_used": 0.0
+    },
+    "material_folds": 0,
+    "natural_stops": 5,
+    "mean_delta": 0.0
+  },
+  "checks": {
+    "raw_count_and_unique_count": true,
+    "split_sizes": true,
+    "content_disjoint": true,
+    "five_shared_folds": true,
+    "all_svm_candidates_complete": true,
+    "both_cnn_caps_complete": true,
+    "pre_freeze_development_only": true,
+    "deliberate_test_request_denied": true,
+    "same_test_order": true,
+    "test_predictions_finite": true,
+    "metrics_finite": true,
+    "models_unchanged": true,
+    "freeze_unchanged": true,
+    "protocol_unchanged": true,
+    "split_and_folds_unchanged": true
+  },
+  "pre_freeze_test_reads": 0,
+  "scope": "integrity audit before split; development-only access until freeze; primary clean predictions cached for diagnostics"
+}

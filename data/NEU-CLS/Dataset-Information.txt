@@ -1,0 +1,135 @@
+NEU-CLS: DATASET PROVENANCE AND LOCAL INTEGRITY RECORD
+===================================================
+Verification date: 27 September 2026
+
+Source attribution and scope
+----------------------------
+The original NEU surface defect database is attributed to Kechen Song and
+Yunhui Yan at Northeastern University. The university page describes 1,800
+greyscale images, 200 x 200 pixels, comprising 300 examples in each of six
+classes: crazing, inclusion, patches, pitted surface, rolled-in scale and
+scratches. It distinguishes image-only NEU-CLS from annotated NEU-DET.
+
+Original source, consulted for this audit:
+https://faculty.neu.edu.cn/songkc/en/zdylm/263265/list/
+
+Original reference requested by that source:
+Song, K. and Yan, Y. (2013). A noise robust method based on completed local
+binary patterns for hot-rolled steel strip surface defects. Applied Surface
+Science, 285, pp. 858-864.
+
+The project performs classification among the six represented defect classes.
+There is no normal-steel class. Results do not establish general defect
+detection or generalisation to other factories, cameras or steel grades.
+
+Figshare distribution and licence
+--------------------------------
+Cao, Weilin (2025). NEU-CLS. Figshare. Dataset. Version 1.
+Published: 30 April 2025.
+Record: https://figshare.com/articles/dataset/NEU-CLS/28903550
+Version DOI: https://doi.org/10.6084/m9.figshare.28903550.v1
+Metadata consulted: https://api.figshare.com/v2/articles/28903550
+Download: https://ndownloader.figshare.com/files/54094775
+File identifier: 54094775
+File name: NEU-CLS.zip
+Published file size: 27,316,154 bytes
+
+The Figshare metadata explicitly identifies the record licence as Creative
+Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+This is the licence stated for the Figshare distribution. It should not be
+represented as independent confirmation of a licence for every separately
+hosted university archive. Attribute both this distribution and the original
+researchers in the final submission.
+
+Retained archive and checksum comparison
+----------------------------------------
+Retained local archive:
+C:\Users\iesha\Downloads\NEU-CLS.zip
+Measured file size: 27,316,154 bytes, matching the Figshare metadata.
+
+Locally computed SHA-256:
+df3f85c2826ac2f3b9fa1a9bc750781a80775c9fba00f7b8bc86138bfb4b1e94
+
+Locally computed MD5:
+19af5a1250d8ab0cb0828d31ee2b349d
+Figshare supplied_md5:
+19af5a1250d8ab0cb0828d31ee2b349d
+Figshare computed_md5:
+19af5a1250d8ab0cb0828d31ee2b349d
+
+Both authoritative MD5 fields match the retained archive. The metadata
+retrieved for this audit does not publish SHA-256. The SHA-256 above is a
+local integrity reference, not a claimed match to a source-published SHA-256.
+The hosted archive was not downloaded again for an independent SHA-256
+comparison. MD5 and size provide evidence of correspondence to the Figshare
+file, but MD5 is not collision-resistant cryptographic proof of exact identity.
+
+Local files and frozen manifest
+------------------------------
+Dataset directory:
+C:\Scripts\industrial-defect-intelligence\data\NEU-CLS
+
+The retained ZIP contains 3,602 files and eight directory entries. SHA-256
+was computed directly from each uncompressed file entry and compared with
+the corresponding local file at the same relative path. All 3,602 matched;
+none was missing or different. This verifies the local archive-to-file link
+without extracting, rewriting or executing the dataset.
+
+All 1,800 image files in outputs/metrics/data_split_manifest.csv were also
+hashed independently. Every current image SHA-256 matched its frozen
+manifest entry. There are 300 raw images in each of the six project classes.
+The manifest SHA-256 matches outputs/metrics/split_lock.json:
+33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86
+
+The saved image audit records all 1,800 images as readable, single-frame,
+200 x 200 JPEGs with RGB storage and greyscale pixel content. These image
+properties are supported by outputs/reports/image_audit.csv and
+outputs/reports/acceptance_summary.csv. Their image content is unchanged,
+as confirmed by the file hashes; no modelling notebook was executed.
+
+One exact duplicate pair is documented: patches_101.jpg and patches_105.jpg.
+The frozen manifest retains patches_101.jpg and excludes patches_105.jpg
+from modelling, preserving both raw files. The modelling pool has 1,799
+images, comprising 1,439 development images and 360 locked test images.
+The decisions are recorded in outputs/reports/02_duplicate_decisions.csv.
+No split, exclusion decision or image was changed by this audit.
+
+The archive itself contains the nested train/train and valid/valid structure,
+annotation files and labels.cache files found locally. These features are
+therefore present in the retained Figshare-corresponding package, rather
+than evidence of a local alteration after extraction. The original container
+names do not define the project's frozen development/test split. Annotation
+files are not inputs to the classification models.
+
+The existing dataset-details.txt is a project-authored source note outside
+the archive. It is retained unchanged. This Dataset-Information.txt is the
+consolidated provenance record and is also outside the archive. Counts in
+the saved experimental audit describe the files present at that audit stage;
+those numerical outputs have not been regenerated to include this document.
+
+Defensible conclusion and remaining limitations
+-----------------------------------------------
+The local experimental images are unchanged from the frozen manifest and
+are byte-for-byte consistent, by SHA-256, with the retained ZIP entries.
+The ZIP matches the file size and MD5 published for Figshare version 1.
+This supports identifying the local copy with that Figshare distribution,
+subject to the strength and scope of the checksum evidence stated above.
+
+No claim is made that the Figshare package is byte-for-byte identical to
+the separately hosted original Northeastern University archive. The
+university page supplies the original description and attribution, but no
+archive checksum was identified on that page. The university archive was
+not retrieved or compared in this audit. The history of repackaging from
+the original release to the Figshare directory and annotation structure
+remains unverified. The original download date and download receipt are
+not established by the available local records; filesystem timestamps are
+not treated as proof of acquisition.
+
+Final consolidation should cite this record, preserve these qualifications,
+and use the recorded download URL, local archive SHA-256 and image manifest
+to specify reproducible input checks. Safe download/extraction and a future
+empty-folder reproduction are separate consolidation work. They were not
+executed during this documentation-only remediation. Historical provenance
+warnings in frozen code and saved outputs remain evidence of their original
+execution context; this record supplies the current verification findings.

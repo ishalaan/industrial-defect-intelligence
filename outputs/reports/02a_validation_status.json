@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "split_manifest_sha256": "33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86",
+  "folds_sha256": "c8210ccc956219350e9f27ebfef6ed16d5ee0cc9e1743522d390fe3c7f5dce8c",
+  "n_folds": 5,
+  "models_trained": 0
+}

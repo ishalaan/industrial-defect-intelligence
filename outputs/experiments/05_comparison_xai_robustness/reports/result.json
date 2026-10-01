@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "clean_evaluation_mode": "first authorised main evaluation",
+  "main_evaluation_count": 1,
+  "test_images": 360,
+  "development_images": 1439,
+  "excluded_images": 1,
+  "protocol_sha256": "9d88de997d99097847962ebf404c75dc37260fe9800f029ee6b017ae02ed2bf9",
+  "clean_metrics": [
+    {
+      "model": "HOG-SVM",
+      "accuracy": 0.9027777777777778,
+      "precision_macro": 0.9054977508630065,
+      "recall_macro": 0.9027777777777777,
+      "f1_macro": 0.9023023505851033
+    },
+    {
+      "model": "CNN",
+      "accuracy": 0.9555555555555556,
+      "precision_macro": 0.961108023833781,
+      "recall_macro": 0.9555555555555556,
+      "f1_macro": 0.9554933202335448
+    }
+  ],
+  "disagreement_counts": {
+    "both_correct": 315,
+    "svm_correct_cnn_wrong": 10,
+    "cnn_correct_svm_wrong": 29,
+    "both_wrong": 6
+  },
+  "high_softmax_errors": 0,
+  "robustness": [
+    {
+      "condition": "blur_radius_0.5",
+      "model": "HOG-SVM",
+      "n": 360,
+      "accuracy": 0.8666666666666667,
+      "precision_macro": 0.8712180277020801,
+      "recall_macro": 0.8666666666666666,
+      "f1_macro": 0.8668427733223085,
+      "delta_accuracy": -0.036111111111111094,
+      "delta_macro_f1": -0.035459577262794806
+    },
+    {
+      "condition": "blur_radius_0.5",
+      "model": "CNN",
+      "n": 360,
+      "accuracy": 0.8166666666666667,
+      "precision_macro": 0.8536497286497288,
+      "recall_macro": 0.8166666666666668,
+      "f1_macro": 0.79357613936082,
+      "delta_accuracy": -0.13888888888888895,
+      "delta_macro_f1": -0.16191718087272478
+    },
+    {
+      "condition": "brightness_minus_10",
+      "model": "HOG-SVM",
+      "n": 360,
+      "accuracy": 0.9,
+      "precision_macro": 0.9025324730094467,
+      "recall_macro": 0.8999999999999999,
+      "f1_macro": 0.8993378037732876,
+      "delta_accuracy": -0.002777777777777768,
+      "delta_macro_f1": -0.0029645468118156826
+    },
+    {
+      "condition": "brightness_minus_10",
+      "model": "CNN",
+      "n": 360,
+      "accuracy": 0.9583333333333334,
+      "precision_macro": 0.9620824725235342,
+      "recall_macro": 0.9583333333333334,
+      "f1_macro": 0.9585674727296184,
+      "delta_accuracy": 0.002777777777777768,
+      "delta_macro_f1": 0.0030741524960735678
+    },
+    {
+      "condition": "brightness_plus_10",
+      "model": "HOG-SVM",
+      "n": 360,
+      "accuracy": 0.8833333333333333,
+      "precision_macro": 0.8895154606925231,
+      "recall_macro": 0.8833333333333333,
+      "f1_macro": 0.882938972848404,
+      "delta_accuracy": -0.019444444444444486,
+      "delta_macro_f1": -0.019363377736699383
+    },
+    {
+      "condition": "brightness_plus_10",
+      "model": "CNN",
+      "n": 360,
+      "accuracy": 0.9472222222222222,
+      "precision_macro": 0.9545227920227921,
+      "recall_macro": 0.9472222222222223,
+      "f1_macro": 0.9454818083750123,
+      "delta_accuracy": -0.008333333333333415,
+      "delta_macro_f1": -0.010011511858532551
+    },
+    {
+      "condition": "contrast_0.8",
+      "model": "HOG-SVM",
+      "n": 360,
+      "accuracy": 0.9027777777777778,
+      "precision_macro": 0.9054977508630065,
+      "recall_macro": 0.9027777777777777,
+      "f1_macro": 0.9023023505851033,
+      "delta_accuracy": 0.0,
+      "delta_macro_f1": 0.0
+    },
+    {
+      "condition": "contrast_0.8",
+      "model": "CNN",
+      "n": 360,
+      "accuracy": 0.8916666666666667,
+      "precision_macro": 0.916563491153655,
+      "recall_macro": 0.8916666666666666,
+      "f1_macro": 0.8910895409244924,
+      "delta_accuracy": -0.06388888888888888,
+      "delta_macro_f1": -0.06440377930905239
+    },
+    {
+      "condition": "noise_sigma_5",
+      "model": "HOG-SVM",
+      "n": 360,
+      "accuracy": 0.5694444444444444,
+      "precision_macro": 0.5954585537918872,
+      "recall_macro": 0.5694444444444445,
+      "f1_macro": 0.5168304397199598,
+      "delta_accuracy": -0.33333333333333337,
+      "delta_macro_f1": -0.38547191086514354
+    },
+    {
+      "condition": "noise_sigma_5",
+      "model": "CNN",
+      "n": 360,
+      "accuracy": 0.6166666666666667,
+      "precision_macro": 0.6460613365610403,
+      "recall_macro": 0.6166666666666666,
+      "f1_macro": 0.5442390097368207,
+      "delta_accuracy": -0.3388888888888889,
+      "delta_macro_f1": -0.4112543104967241
+    }
+  ],
+  "source_hashes": {
+    "manifest": "33af75ac9aa6acf8e5b407d240868ee60866d002f844464551d8e9ef2d89eb86",
+    "split_lock": "f678b758c8b2cb11ccfc2d1689056965dbc0973e294c43e79d09ca43932e9eea",
+    "folds": "c8210ccc956219350e9f27ebfef6ed16d5ee0cc9e1743522d390fe3c7f5dce8c",
+    "fold_lock": "d0f1e51e302487a4b108546e51f6dba741cb6610de28e1336083466f2d3c13bf",
+    "split_status": "159add9b2ce264e5979d6794c0310a8e1e51c407768063e13031fe8e36af8774",
+    "fold_status": "bcf460af82d526bd570ebec5b89d87ab0a27fdf399726006af5af2ddad2e7f80",
+    "svm_pointer": "c7c1d9994802e9152e4d4b99fe6fcfde2aee0d41e5a4c63519058e75324b5ed2",
+    "svm_result": "00f7eede883641950f6b3849ff5d7515d450e1292e2e84cebc7a2f3fdf813af0",
+    "svm_protocol": "4bb986c9247b47039fca1d25c83db9c72be6afb6ff74d3158f023c72ad4c7f84",
+    "cnn_pointer": "c9d34596292099d7e764eeaa8786c8949ff41004bb82e76830e910b6f95dc261",
+    "cnn_result": "44d07bb83d965ebb61b033fd9f7c09bbc5e63d726d467cd76bc7bae61180a831",
+    "cnn_protocol": "7dd460c0a2e4d3e7acad3f87a1cf3af2d3a57cb5e3da359e9edc90bce5a4b344",
+    "sensitivity_pointer": "b370ac5d2bc3cce5ec05bbc38911b245c252731b320deda07daee45c6bab6544",
+    "sensitivity_result": "6c75544aca3c3e801b81967ae2d2a1cdc15748b428dec529835ebda0406864a1",
+    "sensitivity_protocol": "b8ba074e859d1e2c83b37a3de40b5fd67e003fe68273c302bb07142bf4f1eaa5",
+    "svm_model": "515ab1afcde334f57828149c6c3c7d0a5f2a5e1fc0e371e81aa7c62f5b36443a",
+    "cnn_model": "0cc0e297c5754c18727a697502e557a2dd8faa783d2c3d6b4e38881fc8e0007b",
+    "cnn_budget_specification": "55c204629b7acd5843a5d6a71b5015ea1ae464cc4038623a418d1ba1526fea52",
+    "03_classical_hog_svm.ipynb": "fbded2f3c11fdb042e71ce9246320a9ceb862a8689d8f534ff8cfb2ca4b4f5eb",
+    "04_deep_learning_cnn.ipynb": "fbda0f9d44c4f0d78d082b74c18c159dead33c03064d39fa7e01d483c98d3788",
+    "04a_cnn_epoch_sensitivity.ipynb": "c2863f5f6cd6ae1c66dff9cf570b88d8c4debe06cb84995c4b8509b2f5d8eaf7"
+  },
+  "models_retuned": false
+}

@@ -1,0 +1,11 @@
+{
+  "python": "3.14.0",
+  "executable": "C:\\Scripts\\industrial-defect-intelligence\\venv\\Scripts\\python.exe",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "pillow": "12.3.0",
+    "scikit-learn": "1.9.1"
+  }
+}

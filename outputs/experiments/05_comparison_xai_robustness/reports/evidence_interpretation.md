@@ -1,0 +1,33 @@
+The frozen CNN records accuracy **0.9556** and macro F1 **0.9555**, compared with **0.9028** and **0.9023** for HOG-SVM. The observed CNN minus SVM macro F1 difference is **+0.0532**. Each test class has 60 images, so macro recall and accuracy coincide here. Precision and F1 still respond differently to the allocation of false positives. These are results for this locked sample and these frozen implementations, not a universal comparison of handcrafted and learned representations.
+
+For HOG-SVM, the lowest per-class recall is patches at 0.8000; ties are resolved alphabetically for this summary. The largest directed confusion is scratches predicted as inclusion (9 images; first class-order tie). A confusion identifies where review is needed, but it cannot establish whether texture ambiguity, labelling or acquisition conditions caused the error.
+
+For CNN, the lowest per-class recall is pitted surface at 0.8167; ties are resolved alphabetically for this summary. The largest directed confusion is pitted surface predicted as inclusion (10 images; first class-order tie). A confusion identifies where review is needed, but it cannot establish whether texture ambiguity, labelling or acquisition conditions caused the error.
+
+HOG-SVM alone is correct on **10** images, CNN alone on **29**, and both are wrong on **6**. Both are correct on **315**. There are **0 CNN errors with maximum softmax at least 0.90**. Such errors matter for automation bias: a confident display can still accompany a wrong class. Error complementarity motivates future investigation but is not evidence for an ensemble selected on this test set.
+
+The image-level paired bootstrap 95% percentile interval for the CNN minus SVM macro F1 difference is **[+0.0198, +0.0865]**. Interpret this alongside the observed paired error counts. It does not include uncertainty from factories, production batches, repeated training or class prevalence.
+
+The selection rule yields **5 unique images**, with **2 CNN-correct** and **3 CNN-incorrect** cases. Of the 10 target maps, **0** have no positive attribution. Predicted and true targets contextualise the same image; visual differences suggest questions for expert review rather than establishing why the model failed. Spatially broad responses can reflect distributed texture evidence or background sensitivity, which this analysis cannot separate.
+
+The lowest observed diagnostic subgroup macro F1 for HOG-SVM is **0.4162** in **sharpness, low** (n=121). This identifies an audit priority, not a causal effect of that property. The accompanying class counts and within-class recalls are necessary context; brightness, contrast and sharpness can describe the defect itself as well as the imaging setup.
+
+The lowest observed diagnostic subgroup macro F1 for CNN is **0.4335** in **sharpness, low** (n=121). This identifies an audit priority, not a causal effect of that property. The accompanying class counts and within-class recalls are necessary context; brightness, contrast and sharpness can describe the defect itself as well as the imaging setup.
+
+For HOG-SVM, the largest macro F1 degradation among the five declared stresses is **noise_sigma_5**: macro F1 **0.5168**, delta **-0.3855**, accuracy **0.5694**, delta **-0.3333**. These magnitudes depend on the chosen severities and one sample. An improvement under a perturbation would be descriptive, not permission to adopt that transform after test inspection.
+
+For CNN, the largest macro F1 degradation among the five declared stresses is **noise_sigma_5**: macro F1 **0.5442**, delta **-0.4113**, accuracy **0.6167**, delta **-0.3389**. These magnitudes depend on the chosen severities and one sample. An improvement under a perturbation would be descriptive, not permission to adopt that transform after test inspection.
+
+HOG-SVM: median warm file-to-prediction latency is **29.352 ms** for one image, with **13.389 ms** independently measured preprocessing. Batch-32 end-to-end throughput is **39.7 images/s**. These local CPU measurements include preprocessing and decoding, but not an industrial acquisition pipeline.
+
+CNN: median warm file-to-prediction latency is **7.036 ms** for one image, with **0.205 ms** independently measured preprocessing. Batch-32 end-to-end throughput is **350.7 images/s**. These local CPU measurements include preprocessing and decoding, but not an industrial acquisition pipeline.
+
+The frozen SVM file occupies **24,503,366 bytes** and uses **4,356 HOG features**; the CNN checkpoint occupies **32,865 bytes** and has **6,142 parameters**. The CNN checkpoint is smaller, but its framework and runtime footprint are not measured. Serialisation formats differ, so the ratio is a storage observation rather than a general memory-efficiency result. Edge deployment would need target-device timing, memory and thermal measurements; a cloud or inference API would add transport latency, availability, access control and commercial-data governance requirements.
+
+## 10. Evidence-based comparative conclusion
+
+**Observed facts.** On the identical 360-image locked test set, CNN macro F1 is 0.9555 and HOG-SVM macro F1 is 0.9023, a CNN minus SVM difference of +0.0532. CNN accuracy is 0.9556 and SVM accuracy is 0.9028. CNN has higher absolute macro F1 in 3 of the five predeclared stress conditions. Absolute stressed performance and loss relative to each model's clean baseline answer different questions and must be read together. The paired errors, per-class scores, diagnostic subgroups and timing tables qualify the headline comparison.
+
+**Limitations.** This is one frozen compact CNN and one fixed HOG descriptor with a selected RBF SVM, using different development search procedures. It does not isolate architecture from optimisation or representation choices. Image-level bootstrap uncertainty excludes unknown acquisition dependence and external shift. Selected attribution examples are not validated explanations; uncalibrated scores are not correctness probabilities. No normal class, independent factory cohort, deployment service or operational harm model is evaluated.
+
+**Deployment implication.** The measured comparison informs which frozen implementation merits further supervised assessment under the target factory's constraints. It does not establish universal superiority or production readiness. Preserve both models and this evaluation as evidence; use new, representative and independently assessed data for any subsequent model or operating-policy changes.

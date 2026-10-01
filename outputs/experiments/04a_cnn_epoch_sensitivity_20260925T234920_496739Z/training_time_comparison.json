@@ -1,0 +1,8 @@
+{
+  "original_25_cv_wall_seconds": 712.7320395997958,
+  "sensitivity_40_cv_wall_seconds": 703.2323469000403,
+  "historical_wall_difference_seconds": -9.49969269975557,
+  "measured_post25_compute_seconds": 39.888776999898255,
+  "extra_epochs": 6,
+  "scope": "CV only; historical timing includes load variation; post25 compute excludes checkpoint I/O"
+}

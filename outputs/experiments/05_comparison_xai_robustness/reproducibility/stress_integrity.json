@@ -1,0 +1,32 @@
+[
+  {
+    "condition": "blur_radius_0.5",
+    "input_array_sha256": "02f4126306fde4f01bfa46ecfe8762aaf4b13de98df3308f2a7cfb6b20a18543",
+    "prediction_sha256": "d31dd78f4d2c3517d0c5f9907e42fb4b1729867148168b464d52064d2c72d9af",
+    "n": 360
+  },
+  {
+    "condition": "brightness_minus_10",
+    "input_array_sha256": "fcdf228f1bffadec6be236f19bfca888c6480fbc7446fe7667e965e3526801b2",
+    "prediction_sha256": "d8445420064d912bdd275da9470fac71c419e5a4141a7489fc46af133d8108a2",
+    "n": 360
+  },
+  {
+    "condition": "brightness_plus_10",
+    "input_array_sha256": "d38fdf7f69da6fc93be4c2635c94ba877a941dd9d050c5238ae7ad806d21ffc5",
+    "prediction_sha256": "23fd538371a5d1cc02d53be95d20d1719c1fd5f7b61689e89aef387c45f2ec05",
+    "n": 360
+  },
+  {
+    "condition": "contrast_0.8",
+    "input_array_sha256": "fcaf0c87fff002d9042995503df441c47bf4e4f25264553e22ff0e9590bdef4b",
+    "prediction_sha256": "a7fe8d619203079f6c631ce7fbfcd2d2d1259df660b17b0ce13de564d1abfe3a",
+    "n": 360
+  },
+  {
+    "condition": "noise_sigma_5",
+    "input_array_sha256": "a91b0242e1ffa00a51ea25e02aedfa4ca5334d3544453a70bc82381cbe082661",
+    "prediction_sha256": "6f4139b489188f91efc6155df26ee7e0aa0aa4aecc14800afdff708e0a6598b2",
+    "n": 360
+  }
+]

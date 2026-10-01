@@ -1,0 +1,13 @@
+{
+  "device": "cpu",
+  "threads": 4,
+  "warmup_calls": 3,
+  "batch_size": 32,
+  "batch_repeats": 10,
+  "single_repeats": 20,
+  "batch_median_ms": 23.26644997810945,
+  "batch_amortised_ms_per_image": 0.7270765618159203,
+  "single_median_ms": 1.4022999675944448,
+  "single_p95_ms": 1.5691949578467757,
+  "scope": "warm forward pass only, development tensors; excludes image decoding and normalisation"
+}

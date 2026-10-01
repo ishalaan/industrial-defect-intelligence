@@ -1,0 +1,112 @@
+Traceback (most recent call last):
+  File "C:\Users\iesha\Documents\Codex\2026-09-27\referenced-chatgpt-conversation-this-is-an\work\run_05.py", line 30, in <module>
+    client.execute_cell(cell,i,execution_count=count)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Scripts\industrial-defect-intelligence\venv\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\iesha\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Scripts\industrial-defect-intelligence\venv\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Scripts\industrial-defect-intelligence\venv\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+source_paths={
+    'manifest':ROOT/'outputs/metrics/data_split_manifest.csv',
+    'split_lock':ROOT/'outputs/metrics/split_lock.json',
+    'folds':ROOT/'outputs/metrics/development_cv_folds.csv',
+    'fold_lock':ROOT/'outputs/metrics/development_cv_lock.json',
+    'split_status':ROOT/'outputs/reports/02_split_status.json',
+    'fold_status':ROOT/'outputs/reports/02a_validation_status.json'}
+sources={k:sha(v) for k,v in source_paths.items()}
+records={}; runs={}
+for key, pointer_name in [('svm','03_classical_latest.json'),('cnn','04_cnn_latest.json'),('sensitivity','04a_cnn_epoch_sensitivity_latest.json')]:
+    pointer_path=ROOT/'outputs/reports'/pointer_name
+    pointer=readj(pointer_path); run=(ROOT/pointer['run_directory']).resolve()
+    check(key+' pointer inside project outputs',run.is_relative_to(ROOT/'outputs'))
+    check(key+' result digest',sha(run/'result.json')==pointer['result_sha256'])
+    result=readj(run/'result.json')
+    check(key+' passed without test evaluation',pointer['status']==result['status']=='PASS' and result['test_evaluation_performed'] is False and result['test_images_opened']==0)
+    for k,v in sources.items():
+        check(key+' source '+k,result.get('source_digests',result.get('source_hashes'))[k]==v)
+    records[key]=result; runs[key]=run
+    source_paths[key+'_pointer']=pointer_path
+    source_paths[key+'_result']=run/'result.json'
+    source_paths[key+'_protocol']=run/'protocol.json'
+lock=readj(source_paths['split_lock']); fold_lock=readj(source_paths['fold_lock'])
+CLASSES=lock['classes']; LABELS=np.arange(len(CLASSES))
+check('Six expected classes',CLASSES==['crazing','inclusion','patches','pitted_surface','rolled_in_scale','scratches'])
+check('Locked manifest digest',sources['manifest']==lock['manifest_sha256']==fold_lock['split_manifest_sha256'])
+check('Locked fold digest',sources['folds']==fold_lock['folds_sha256'])
+check('Preparation passed',readj(source_paths['split_status'])['status']==readj(source_paths['fold_status'])['status']=='PASS')
+manifest=pd.read_csv(source_paths['manifest'],keep_default_na=False)
+dev=manifest.loc[manifest.split.eq('development')].sort_values('path').reset_index(drop=True)
+test=manifest.loc[manifest.split.eq('test')].sort_values('path').reset_index(drop=True)
+excluded=manifest.loc[~manifest.split.isin(['development','test'])]
+check('Counts 1439 / 360 / 1',len(manifest)==1800 and len(dev)==1439 and len(test)==360 and len(excluded)==1)
+check('Unique paths and modelling flags',manifest.path.is_unique and dev.include_in_modelling.all() and test.include_in_modelling.all() and not excluded.include_in_modelling.any())
+for key in ['path','sha256','pixel_sha256']:
+    check('Disjoint and unique retained '+key,dev[key].is_unique and test[key].is_unique and not set(dev[key])&set(test[key]))
+check('Excluded record duplicates a retained image',excluded.sha256.iloc[0] in set(pd.concat([dev,test]).sha256))
+folds=pd.read_csv(source_paths['folds'])
+check('Shared folds cover development only',folds.path.is_unique and set(folds.path)==set(dev.path))
+for col in ['class_name','sha256','pixel_sha256']:
+    check('Fold metadata '+col,folds.set_index('path').loc[dev.path,col].tolist()==dev[col].tolist())
+check('Test contains 60 images per class',test.class_name.value_counts().reindex(CLASSES).eq(60).all())
+def locate_digest(directory, suffix, expected):
+    found=[p for p in directory.rglob('*'+suffix) if sha(p)==expected]
+    check('Exactly one matching '+suffix+' artefact',len(found)==1)
+    return found[0]
+svm_path=locate_digest(runs['svm'],'.joblib',records['svm']['model_sha256'])
+cnn_path=locate_digest(runs['cnn'],'.pt',records['cnn']['final_checkpoint_sha256'])
+source_paths.update(svm_model=svm_path,cnn_model=cnn_path)
+bundle=joblib.load(svm_path)
+checkpoint=torch.load(cnn_path,map_location='cpu',weights_only=True)
+svm=bundle['pipeline']; HOG=bundle['hog_config']
+cnn_protocol=readj(runs['cnn']/'protocol.json')
+svm_protocol=readj(runs['svm']/'protocol.json')
+spec_path=runs['sensitivity']/'final_cnn_budget_specification.json'
+source_paths['cnn_budget_specification']=spec_path
+spec=readj(spec_path)
+check('04a retains the frozen baseline',records['sensitivity']['baseline_run']==runs['cnn'].name and records['sensitivity']['chosen_max_epochs']==25 and spec['reference_run_for_selected_epochs']==runs['cnn'].name and spec['derived_refit_epochs']==checkpoint['epoch']==20)
+check('CNN configuration agrees',checkpoint['config']==cnn_protocol['config']==spec['config'])
+check('CNN normalisation agrees',checkpoint['mean']==records['cnn']['final_normalisation']['mean'] and checkpoint['std']==records['cnn']['final_normalisation']['std'])
+check('Class mappings agree',bundle['classes']==checkpoint['classes']==CLASSES and checkpoint['class_to_index']=={c:i for i,c in enumerate(CLASSES)})
+check('Model split and folds agree',bundle['split_manifest_sha256']==checkpoint['manifest_sha256']==sources['manifest'] and bundle['folds_sha256']==checkpoint['folds_sha256']==sources['folds'])
+check('Frozen HOG configuration',json.loads(json.dumps(HOG))==svm_protocol['hog'] and tuple(bundle['input_size'])==(200,200) and bundle['grayscale']==svm_protocol['grayscale'])
+check('Frozen RBF configuration',bundle['selected_params']==records['svm']['selected_params']=={'kernel':'rbf','C':10.0,'gamma':'scale'} and all(svm.named_steps['svm'].get_params()[k]==v for k,v in bundle['selected_params'].items()))
+check('Frozen scaler and SVM dimensions',int(svm.named_steps['scale'].n_samples_seen_)==1439 and svm.n_features_in_==records['svm']['feature_dimensions']==4356)
+check('No SVM probability fit',svm.named_steps['svm'].probability is False)
+check('SVM class order',list(svm.classes_)==CLASSES)
+for name in ['03_classical_hog_svm.ipynb','04_deep_learning_cnn.ipynb','04a_cnn_epoch_sensitivity.ipynb']:
+    source_paths[name]=ROOT/name
+source_hashes={k:sha(v) for k,v in source_paths.items()}
+writej(RUN/'reproducibility/source_inventory.json',{k:{'path':v.relative_to(ROOT).as_posix(),'sha256':source_hashes[k]} for k,v in source_paths.items()})
+table(pd.crosstab(manifest.split,manifest.class_name).reindex(columns=CLASSES),'split_class_counts',index=True)
+print('All frozen artefacts verified. No test image decoded by this notebook yet.')
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mRuntimeError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 66[39m
+[32m     62[39m check([33m'Model split and folds agree'[39m,bundle[[33m'split_manifest_sha256'[39m]==checkpoint[[33m'manifest_sha256'[39m]==sources[[33m'manifest'[39m] [38;5;28;01mand[39;00m bundle[[33m'folds_sha256'[39m]==checkpoint[[33m'folds_sha256'[39m]==sources[[33m'folds'[39m])
+[32m     63[39m check([33m'Frozen HOG configuration'[39m,json.loads(json.dumps(HOG))==svm_protocol[[33m'hog'[39m] [38;5;28;01mand[39;00m tuple(bundle[[33m'input_size'[39m])==([32m200[39m,[32m200[39m) [38;5;28;01mand[39;00m bundle[[33m'grayscale'[39m]==svm_protocol[[33m'grayscale'[39m])
+[32m     64[39m check([33m'Frozen RBF configuration'[39m,bundle[[33m'selected_params'[39m]==records[[33m'svm'[39m][[33m'selected_params'[39m]=={[33m'kernel'[39m:[33m'rbf'[39m,[33m'C'[39m:[32m10.0[39m,[33m'gamma'[39m:[33m'scale'[39m} [38;5;28;01mand[39;00m all(svm.named_steps[[33m'svm'[39m].get_params()[k]==v [38;5;28;01mfor[39;00m k,v [38;5;28;01min[39;00m bundle[[33m'selected_params'[39m].items()))
+[32m     65[39m check([33m'Frozen scaler and SVM dimensions'[39m,int(svm.named_steps[[33m'scale'[39m].n_samples_seen_)==[32m1439[39m [38;5;28;01mand[39;00m svm.n_features_in_==records[[33m'svm'[39m][[33m'feature_dimensions'[39m]==[32m4356[39m)
+[32m---> [39m[32m66[39m check([33m'No SVM probability fit'[39m,svm.named_steps[[33m'svm'[39m].probability [38;5;28;01mis[39;00m [38;5;28;01mFalse[39;00m)
+[32m     67[39m check([33m'SVM class order'[39m,list(svm.classes_)==CLASSES)
+[32m     68[39m [38;5;28;01mfor[39;00m name [38;5;28;01min[39;00m [[33m'03_classical_hog_svm.ipynb'[39m,[33m'04_deep_learning_cnn.ipynb'[39m,[33m'04a_cnn_epoch_sensitivity.ipynb'[39m]:
+[32m     69[39m     source_paths[name]=ROOT/name
+
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 34[39m, in [36mcheck[39m[34m(name, value)[39m
+[32m     31[39m [38;5;28;01mdef[39;00m check(name, value):
+[32m     32[39m     CHECKS.append({[33m'check'[39m:name, [33m'status'[39m:[33m'PASS'[39m [38;5;28;01mif[39;00m bool(value) [38;5;28;01melse[39;00m [33m'FAIL'[39m})
+[32m     33[39m     pd.DataFrame(CHECKS).to_csv(RUN/[33m'reports/acceptance_checks.csv'[39m,index=[38;5;28;01mFalse[39;00m)
+[32m---> [39m[32m34[39m     [38;5;28;01mif[39;00m [38;5;28;01mnot[39;00m bool(value): [38;5;28;01mraise[39;00m RuntimeError(name)
+
+[31mRuntimeError[39m: No SVM probability fit
+

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "parameters": 6142,
+  "synthetic_train_batch_seconds": 0.054483699961565435,
+  "captum_check": "PASS: synthetic attribution shape 1x1x25x25, finite",
+  "no_real_images_used_for_smoke_training": true
+}

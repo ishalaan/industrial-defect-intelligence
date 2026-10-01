@@ -1,0 +1,17 @@
+{
+  "chosen_cap": 25,
+  "refit_epochs": 20,
+  "decision": "retain 25: adequate under this bounded check",
+  "prefix_matches": true,
+  "prefix_max_errors": {
+    "online_loss": 0.0,
+    "train_loss": 0.0,
+    "validation_loss": 0.0,
+    "train_f1": 0.0,
+    "validation_f1": 0.0,
+    "patience_used": 0.0
+  },
+  "material_folds": 0,
+  "natural_stops": 5,
+  "mean_delta": 0.0
+}

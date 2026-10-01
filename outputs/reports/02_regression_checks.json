@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "checks": [
+    "PASS: recognised filename variants preserve full class names",
+    "PASS: unknown labels, nonnumeric suffixes and folder conflicts rejected",
+    "PASS: saved split reused and reconstructed identically",
+    "PASS: changed split rejected without overwriting it",
+    "PASS: changed source fingerprint rejected before split publication"
+  ],
+  "scope": "Isolated temporary outputs; real raw dataset read only; no model fitting"
+}
