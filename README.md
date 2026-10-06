@@ -235,14 +235,14 @@ The implementation uses **PyTorch** for the custom CNN; **scikit-learn** for SVM
 
 The following references are also identified in the complete notebook; consult its reference list for the additional distribution-shift, steel-inspection and implementation sources.
 
-Cao, W. (2025) *NEU-CLS*, version 1. Figshare. Available at: [Dataset DOI](https://doi.org/10.6084/m9.figshare.28903550.v1). Distribution licence: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Cao, W. (2025) *NEU-CLS*, version 1. Figshare. Available at: <https://doi.org/10.6084/m9.figshare.28903550.v1> (Accessed: 6 October 2026). Distribution licence: <https://creativecommons.org/licenses/by/4.0/> (Accessed: 6 October 2026).
 
-Song, K. and Yan, Y. (2013) 'A noise robust method based on completed local binary patterns for hot-rolled steel strip surface defects', *Applied Surface Science*, 285, pp. 858-864. Dataset description and citation: [Northeastern University surface defect database](https://faculty.neu.edu.cn/songkc/en/zdylm/263265/list/).
+Song, K. and Yan, Y. (2013) 'A noise robust method based on completed local binary patterns for hot-rolled steel strip surface defects', *Applied Surface Science*, 285, pp. 858-864. Dataset description and citation: <https://faculty.neu.edu.cn/songkc/en/zdylm/263265/list/> (Accessed: 6 October 2026).
 
-Dalal, N. and Triggs, B. (2005) 'Histograms of oriented gradients for human detection', *IEEE Computer Society Conference on Computer Vision and Pattern Recognition*, 1, pp. 886-893. Available at: [Author-hosted paper](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf).
+Dalal, N. and Triggs, B. (2005) 'Histograms of oriented gradients for human detection', *IEEE Computer Society Conference on Computer Vision and Pattern Recognition*, 1, pp. 886-893. Available at: <https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf> (Accessed: 6 October 2026).
 
-Cortes, C. and Vapnik, V. (1995) 'Support-vector networks', *Machine Learning*, 20, pp. 273-297. Available at: [Article DOI](https://doi.org/10.1007/BF00994018).
+Cortes, C. and Vapnik, V. (1995) 'Support-vector networks', *Machine Learning*, 20, pp. 273-297. Available at: <https://doi.org/10.1007/BF00994018> (Accessed: 6 October 2026).
 
-Selvaraju, R.R., Cogswell, M., Das, A., Vedantam, R., Parikh, D. and Batra, D. (2017) 'Grad-CAM: Visual explanations from deep networks via gradient-based localization', *IEEE International Conference on Computer Vision*. Available at: [Paper and version history](https://arxiv.org/abs/1610.02391).
+Selvaraju, R.R., Cogswell, M., Das, A., Vedantam, R., Parikh, D. and Batra, D. (2017) 'Grad-CAM: Visual explanations from deep networks via gradient-based localization', *IEEE International Conference on Computer Vision*. Available at: <https://arxiv.org/abs/1610.02391> (Accessed: 6 October 2026).
 
-Hendrycks, D. and Dietterich, T. (2019) 'Benchmarking neural network robustness to common corruptions and perturbations', *International Conference on Learning Representations*. Available at: [Paper](https://arxiv.org/abs/1903.12261).
+Hendrycks, D. and Dietterich, T. (2019) 'Benchmarking neural network robustness to common corruptions and perturbations', *International Conference on Learning Representations*. Available at: <https://arxiv.org/abs/1903.12261> (Accessed: 6 October 2026).
